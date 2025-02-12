@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine's Invitation</title>
+    <style>
+        body { text-align: center; font-family: Arial, sans-serif; background-color: #ffccd5; }
+        h1 { color: red; }
+        .bugcat { width: 200px; margin: 10px; }
+        button { padding: 10px; font-size: 16px; background: red; color: white; border: none; cursor: pointer; border-radius: 5px; }
+        #message { display: none; font-size: 20px; color: #ff4d6d; margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <h1>Happy Valentine's, My Love! 💖</h1>
+    <p>Look who’s here to celebrate with us! 🐱💕</p>
+ 
+    <!-- Bugcat Stickers -->
+<img class="bugcat" src="https://media.tenor.com/YOUR-BUGCAT-STICKER1.gif" alt="Bugcat Sticker">
+https://media.tenor.com/YOUR-BUGCAT-STICKER2.gif" alt="Bugcat Sticker">
+https://media.tenor.com/YOUR-BUGCAT-STICKER3.gif" alt="Bugcat Sticker">
+ 
+    <p>Click the button for a surprise! 🎁</p>
+    <button onclick="showMessage()">Click Me</button>
+    
+    <p id="message">I love you so much! ❤️🐱</p>
+    
+    <script>
+        function showMessage() {
+            document.getElementById("message").style.display = "block";
+        }
+    </script>
+</body>
+</html>
