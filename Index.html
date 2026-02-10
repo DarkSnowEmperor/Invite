@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invitation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,600&display=swap" rel="stylesheet">
+    <style>
+    body {background-color: #ffc0cb;
+    font-family: 'Playfair Display', serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+}
+    .container {text-align: center;
+        z-index;}
+    h1 {margin-bottom: 20px;
+    font-style: italic;
+    font-size: 48px}
+    
+    button {margin: 10px;
+        padding: 12px 24px; 
+        font-size: 18px;
+        cursor: pointer;
+        border: none;
+        border-radius: 8px;
+        background-color: #ff69b4;
+        color:white;
+        transition: 0.3s;
+    }
+    button:hover {
+        background-color: #ff1493;
+        transform: scale(1.1);
+    }
+    /*loading overlay*/
+    .loading {
+        position:fixed;
+        top: 0; left:0;
+        width: 100%; height: 100%;
+        background: rgba(255,192,203,0.9);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 24px;
+        visibility: hidden; /*hidden by default*/
+    }
+    .heart {
+        font-size: 40px;
+        animation: pulse 1s infinite; }
+    @keyframes pulse {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.3); }
+        100% { transform: scale(1); }
+    } 
+    .petal {
+        position: fixed;
+        top: -50px;
+        width: 40px;
+        height: 40px;
+        background-image: url('image/cherry blossom.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        opacity: 0.9;
+        animation: fall 10s linear infinite;
+    }
+     @keyframes fall {
+        0% {transform: translateY(0) rotate(0deg); }
+        100% {transform: translateY(100vh) rotate(360deg); }
+    }
+
+    </style>
+</head>
+<body> 
+ <div class="container">
+    <h1>Will you be my Valentine?</h1>
+    <button onclick="goNext()">Yes❤️❤️❤️</button>
+    <button onclick="goNext()">Yes🤔🤔🤔</button>
+ </div>
+
+<!-- Loading screen -->
+<div class="loading" id="loading">
+    <div class="heart">💖</div>
+<p>Loading Love...</p>
+</div>
+
+
+<script>
+    for (let i = 0; i < 20; i++) {
+        const petal = document.createElement("div");
+        petal.classList.add("petal");
+        petal.style.left = Math.random() * 100 + "vw";
+        petal.style.animationDelay = Math.random() * 10 + "s";
+        petal.style.transform = "scale(" + (0.5 + Math.random()) + ")";
+        document.body.appendChild(petal);
+    }
+</script>
+<script>
+    function goNext() {
+        // show loading screen
+        document.getElementById("loading").style.visibility = "visible";
+
+        // wait 2 seconds. then go to the next page
+        setTimeout(function(){
+            window.location.href = "pages/next.html";
+        }, 2000);
+    }
+</script>
+
+
+</body>
+</html>
